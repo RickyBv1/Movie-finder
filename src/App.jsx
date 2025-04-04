@@ -1,11 +1,11 @@
-import { useState } from "react";
 import "./App.css";
-import responseMovies from "./mocks/withResults.json";
-import withoutResults from "./mocks/withoutResults.json";
+import { useMovies } from "./hooks/useMovies.js";
 import {Movies} from "./components/Movies.jsx";
 
+
 function App() {
-  const movies = responseMovies.Search;
+
+  const { movies } = useMovies();
 
   return (
     <div className="page">
