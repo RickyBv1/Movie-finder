@@ -36,11 +36,12 @@ function useSearch() {
 }
 
 function App() {
-  const { movies } = useMovies();
   const { search, updateSearch, error } = useSearch();
+  const { movies, loading, getMovies } = useMovies({ search });
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    getMovies();
   };
 
   const handleChange = (event) => {
@@ -50,7 +51,7 @@ function App() {
   return (
     <div className="page">
       <header>
-        <h1>Movie Finder</h1>
+        <h1>Series and movies finder</h1>
         <form className="form" onSubmit={handleSubmit}>
           <input
             style={{
@@ -67,7 +68,7 @@ function App() {
       </header>
 
       <main>
-        <Movies movies={movies} />
+        {loading ? <p>Loading...</p> : <Movies movies={movies} />}
       </main>
     </div>
   );
