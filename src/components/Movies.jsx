@@ -1,8 +1,8 @@
 function listOfMovies({ movies }) {
   return (
-    <ul>
+    <ul className="movies">
       {movies.map((movie) => (
-        <li key={movie.iD}>
+        <li className="movie-card" key={movie.iD}>
           <h3>{movie.title}</h3>
           <p>{movie.year}</p>
           <img src={movie.poster} alt={movie.Title} />

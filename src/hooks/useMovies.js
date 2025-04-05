@@ -1,5 +1,5 @@
 import responseMovies from "../mocks/withResults.json";
-import withoutResults from "../mocks/withoutResults.json";
+//import withoutResults from "../mocks/withoutResults.json";
 
 export function useMovies() {
   const movies = responseMovies.Search;
